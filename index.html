@@ -75,14 +75,23 @@
             height: auto;
         }
 
-        .btn {
-            background-color: #fff;
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
+        /* Contact Me & See CV Buttons */
+        .contact-btn, .cv-btn {
             display: inline-block;
-            margin-top: 10px;
+            padding: 12px 20px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
             border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover Effect */
+        .contact-btn:hover, .cv-btn:hover {
+            background: gray;
+            color: white;
+            transform: scale(1.1);
         }
 
         /* Projects Section */
@@ -154,8 +163,8 @@
         <div class="hero-text">
             <h1>Hi, my name is Aljohn Baguis</h1>
             <p>I am a fourth-year college student at the University of Makati, pursuing a Bachelor of Science in Computer Science with a major in Social Computing. My personal interest lies in UI/UX design, and I am passionate about creating intuitive and engaging user experiences. Additionally, I am skilled in providing IT support and data encoding.</p>
-            <a href="#contact" class="btn">Contact Me</a>
-            <a href="assets/acbresume.pdf" class="btn" target="_blank">See my CV</a>
+            <a href="#contact" class="contact-btn">Contact Me</a>
+            <a href="assets/acbresume.pdf" class="cv-btn" target="_blank">See CV</a>
         </div>
         <div class="hero-image">
             <img src="assets/acbpic.png" alt="Aljohn Baguis">
