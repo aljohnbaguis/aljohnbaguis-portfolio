@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cease the Ships</title>
+    <style>
+        body { 
+            background: black; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            padding: 40px;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        .project-header {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .project-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        /* Small images section */
+        .small-images-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .small-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 28%;
+        }
+        .small-image img {
+            width: 100%; 
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-label {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* Large image section */
+        .image-container {
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* Back Button */
+        .back-btn { 
+            color: black; 
+            text-decoration: none; 
+            background: white; 
+            padding: 12px 20px; 
+            border-radius: 5px; 
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: gray;
+            color: white;
+        }
+
+        /* Download Button */
+        .download-btn {
+            color: white;
+            background-color: #4CAF50; /* Green background */
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="project-header">Cease the Ships</h1>
+        <p class="project-description">This project is a mobile board game application, specifically a naval-based board game. It is designed to provide a strategic and engaging experience for players, drawing inspiration from classic board games like chess and The Game of the Generals.</p>
+        <p class="project-description">This is one of my proudest projects since I have been working on it with my teammates from the second semester of our third year up until now, in our fourth year. This project has taken me to places I never expected to be part of. Because of this project, my teammates and I won <strong>first runner-up</strong> at <strong>Infotechnolympics 2024</strong>. It was an unexpected achievement for me.</p>
+        <p class="project-description">Following that event, we were also given the opportunity to represent the University of Makati at the <strong>I.T. Skills Olympics 2024</strong> in the <strong>Android Application Development (Game Category)</strong>, where we competed against participants from over 60 schools across the country. Although we didn’t win a place, we are still proud to have represented our campus.</p>
+        
+        <!-- Small Images Section -->
+        <div class="small-images-container">
+            <div class="small-image">
+                <img src="assets/img1.png" alt="Preview 1">
+                <span class="image-label">Plaque and Certificate</span>
+            </div>
+            <div class="small-image">
+                <img src="assets/img2.png" alt="Preview 2">
+                <span class="image-label">Me and my teammates</span>
+            </div>
+            <div class="small-image">
+                <img src="assets/img3.png" alt="Preview 3">
+                <span class="image-label">I.T Skills Olympics 2024 Participant ID</span>
+            </div>
+        </div>
+
+        <!-- Large Image Section -->
+        <div class="image-container">
+            <img src="assets/project1.png" alt="Project 1">
+        </div>
+
+        <!-- Download Button -->
+        <a href="https://stirthesheep.itch.io/cease-the-ships" class="download-btn" target="_blank">Download the App</a>
+
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
+    </div>
+
+</body>
+</html>
