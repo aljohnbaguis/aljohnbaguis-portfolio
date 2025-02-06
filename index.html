@@ -3,115 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Curicculum Vitae</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Aljohn Baguis - Portfolio</title>
     <style>
-        body { 
-            background: black; 
-            color: white; 
-            font-family: Arial, sans-serif; 
-            padding: 40px;
+        /* General Styles */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #111;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: gray;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
             text-align: left;
         }
-        .header {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center;
+
+        .hero-text {
+            max-width: 50%;
         }
-        .section {
-            margin-bottom: 20px;
+
+        .hero-text h1 {
+            font-size: 2.5em;
         }
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
+
+        .hero-text p {
+            margin: 15px 0;
         }
-        .image-container {
-            text-align: center;
-            margin-bottom: 20px;
+
+        .hero-image img {
+            width: 500px;
+            height: auto;
         }
-        .image-container img {
-            max-width: 150px;
-            border-radius: 50%;
-        }
-        .back-btn { 
-            color: black; 
-            text-decoration: none; 
-            background: white; 
-            padding: 12px 20px; 
-            border-radius: 5px; 
-            font-weight: bold;
+
+        /* Contact Me & See CV Buttons */
+        .contact-btn, .cv-btn {
             display: inline-block;
-            transition: 0.3s;
-            text-align: center;
+            padding: 12px 20px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
-        .back-btn:hover {
+
+        /* Hover Effect */
+        .contact-btn:hover, .cv-btn:hover {
             background: gray;
             color: white;
+            transform: scale(1.1);
+        }
+
+        /* Projects Section */
+        #projects {
+        text-align: center;
+        padding: 50px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 30px;
+            background: #111;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #000;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="header">Curriculum Vitae</h1>
-        
-        <div class="image-container">
-            <img src="assets/acb2x2pic.jpg" alt="My Photo">
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="assets/acblogo.png" alt="Logo">
+            <span>Aljohn Baguis</span>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Personal Information</h2>
-            <p><strong>Name:</strong> Aljohn Baguis</p>
-            <p><strong>Email:</strong> aljohnbaguis456@gmail.com</p>
-            <p><strong>Phone:</strong> 0915-174-4849</p>
-            <p><strong>Location:</strong> Block 4, Pook Malinis, Brgy. UP Village, Quezon City</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Education</h2>
-            <p><strong>Bachelor of Science in Computer Science major in Social Computing</strong> | University of Makati (2021-present)</p>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Skills</h2>
+        <nav>
             <ul>
-                <li>User Interface Designing Skills</li>
-                <li>Wireframing and Prototyping Skills</li>
-                <li>Design, Layout and Typography</li>
-                <li>Basic computer skills</li>
-                <li>Proficiency in Figma and Canva</li>
-                <li>IT and Technical Support Skills</li>
+                <li><a href="#projects">My Projects</a></li>
+                <li><a href="aboutMe.html">About Me</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-text">
+            <h1>Hi, my name is Aljohn Baguis</h1>
+            <p>I am a fourth-year college student at the University of Makati, pursuing a Bachelor of Science in Computer Science with a major in Social Computing. My personal interest lies in UI/UX design, and I am passionate about creating intuitive and engaging user experiences. Additionally, I am skilled in providing IT support and data encoding.</p>
+            <a href="#contact" class="contact-btn">Contact Me</a>
+            <a href="assets/acbresume.pdf" class="cv-btn" target="_blank">See CV</a>
         </div>
-
-        <div class="section">
-            <h2 class="section-title">Projects</h2>
-            <p><strong>Cease the Ships</strong> - A naval-based mobile board game application that utilizes Minimax algorithm and has a feature of Player vs. Player and Player vs. Environment (AI)</p>
-            <p><strong>2D Interactable Environment</strong> - A mini 2D Christmas-themed laptop game where users can interact and customize messages, set in a festive, holiday-inspired environment.</p>
-            <p><strong>Lost World</strong> - A 3D RPG game for laptops, featuring an original storyline and immersive gameplay in a dynamic, interactive world.</p>
-
-
+        <div class="hero-image">
+            <img src="assets/acbpic.png" alt="Aljohn Baguis">
         </div>
+    </section>
 
-        <div class="section">
-            <h2 class="section-title">Awards and Certificates</h2>
-            <p>Dean's Lister | 2021 - 2024, 2025</p>
-            <p>1st Runner Up in Infotechnolympics Android Application Development | October 2024</p>
-            <p>I.T Skills Olympics Participant | November 2024</p>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <img src="assets/project1.png" alt="Project 1">
+                <h3>Cease the Ships</h3>
+                <p>A UI design concept for a mobile board game application.</p>
+                <button class="see-more-btn" data-project="project1.html">See More</button>
+            </div>
+            <div class="project-card">
+                <img src="assets/project2.png" alt="Project 2">
+                <h3>2D Interactable Environment</h3>
+                <p>A simple design for a mini 2D Christmas-themed laptop game.</p>
+                <button class="see-more-btn" data-project="project2.html">See More</button>
+            </div>
+            <div class="project-card">
+                <img src="assets/project3.png" alt="Project 3">
+                <h3>Lost World</h3>
+                <p>A UI design for a 3D PC game project.</p>
+                <button class="see-more-btn" data-project="project3.html">See More</button>
+            </div>
         </div>
+    </section>
 
-        <div class="image-container">
-            <a href="index.html" class="back-btn">⬅ Back to Portfolio</a>
-        </div>
-    </div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p><i class="fas fa-envelope"></i> Email: aljohnbaguis456@gmail.com</p>
+        <p><i class="fas fa-phone"></i> Phone: +63 915 174 4849</p>
+        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/aljohn-baguis-361485257/" target="_blank">Aljohn Baguis</a></p>
+        <p><i class="fab fa-facebook"></i> Facebook: <a href="https://web.facebook.com/aljohn.baguisii" target="_blank">Aljohn Baguis</a></p>
+    </section>
+
+    <!-- CSS for white link color -->
+    <style>
+        #contact a {
+            color: white;  /* Sets the color of links to white */
+            text-decoration: none;  /* Removes underline from links */
+        }
+
+        #contact a:hover {
+            text-decoration: underline;  /* Optional: Adds underline on hover */
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aljohn Baguis | All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const seeMoreButtons = document.querySelectorAll(".see-more-btn");
+    
+            seeMoreButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    // Get the project ID from the button's data attribute
+                    const projectPage = this.getAttribute("data-project");
+    
+                    // Redirect to the specific project page
+                    window.location.href = projectPage;
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
