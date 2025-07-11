@@ -1,250 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Aljohn Baguis - Portfolio</title>
-    <style>
-        /* General Styles */
-        
-        body {
-            background-color: #111; /* Same as navbar */
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <title>Aljohn Baguis - Portfolio</title>
+  <style>
+    /* General Styles */
+    body {
+      background-image: url('assets/acb-bg-logo.png');
+      background-repeat: repeat;
+      background-size: 100px auto;
+      background-position: top left;
+      background-attachment: fixed;
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Navigation Bar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #111;
-        }
+    /* Navigation Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #111;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+    }
 
-        nav ul li {
-            margin: 0 15px;
-        }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    nav ul li a:hover {
+      color: gray;
+    }
 
-        nav ul li a:hover {
-            color: gray;
-        }
+    /* Hero Section */
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      text-align: left;
+      flex-wrap: wrap;
+    }
 
-        /* Hero Section */
-        #hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            text-align: left;
-        }
+    .hero-text {
+      max-width: 50%;
+    }
 
-        .hero-text {
-            max-width: 50%;
-        }
+    .hero-text h1 {
+      font-size: 2.5em;
+    }
 
-        .hero-text h1 {
-            font-size: 2.5em;
-        }
+    .hero-text p {
+      margin: 15px 0;
+      text-align: justify;
+    }
 
-        .hero-text p {
-            margin: 15px 0;
-        }
+    .hero-image img {
+      width: 500px;
+      height: auto;
+    }
 
-        .hero-image img {
-            width: 500px;
-            height: auto;
-        }
+    /* Button Container */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        /* Contact Me & See CV Buttons */
-        .contact-btn, .cv-btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background: white;
-            color: black;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-        }
+    .contact-btn,
+    .cv-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: white;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
 
-        /* Hover Effect */
-        .contact-btn:hover, .cv-btn:hover {
-            background: gray;
-            color: white;
-            transform: scale(1.1);
-        }
+    .contact-btn:hover,
+    .cv-btn:hover {
+      background: gray;
+      color: white;
+      transform: scale(1.1);
+    }
 
-        /* Projects Section */
-        #projects {
+    /* Projects Section */
+    #projects {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .project-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background-color: #111111;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 300px;
+      box-sizing: border-box;
+      margin: 10px;
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+    }
+
+    /* Contact Section */
+    #contact {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+    }
+
+    #contact a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #000;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .hero-text h1 {
+        font-size: 2em;
+      }
+
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      #hero {
+        flex-direction: column;
         text-align: center;
-        padding: 50px;
-        }
+        padding: 30px;
+      }
 
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+      .projects-container {
+        gap: 15px;
+      }
+    }
 
-        .project-card {
-            background: #222;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            width: 250px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+      }
 
-        .project-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
 
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
+      .hero-image img {
+        max-width: 300px;
+      }
 
-        /* Contact Section */
-        #contact {
-            text-align: center;
-            padding: 30px;
-            background: #111;
-        }
+      .project-card {
+        width: 90%;
+      }
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #000;
-        }
-    </style>
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.5em;
+      }
+
+      .contact-btn,
+      .cv-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 10px auto;
+      }
+
+      .project-card {
+        padding: 12px;
+      }
+
+      .hero-image img {
+        max-width: 250px;
+      }
+    }
+    .animated-name {
+  font-weight: bold;
+  animation: colorChange 4s infinite alternate;
+  transition: color 0.5s ease;
+}
+
+@keyframes colorChange {
+  0%   { color: #ff0040; }   /* Light pink */
+  25%  { color: #00aeff; }   /* Light blue */
+  50%  { color: #88ff00; }   /* Light green */
+  75%  { color: #ffe600; }   /* Light yellow */
+  100% { color: #d900ff; }   /* Light purple */
+}
+  </style>
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">
+      <img src="assets/acblogo.png" alt="Logo" />
+      <span>Aljohn Baguis</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">
-            <img src="assets/acblogo.png" alt="Logo">
-            <span>Aljohn Baguis</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#projects">My Projects</a></li>
-                <li><a href="aboutMe.html">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-text">
+    <h1>Hi, my name is <span class="animated-name">Aljohn Baguis</span></h1>
+      <p>
+        I am a fresh graduate from the University of Makati with a Bachelor of
+        Science degree in Computer Science, majoring in Social Computing. I have
+        a strong passion for UI/UX design and enjoy crafting intuitive,
+        user-friendly digital experiences. In addition to my design interests, I
+        am also skilled in IT support and data encoding. I am currently seeking
+        remote work opportunities where I can apply my skills, continue
+        learning, and grow professionally in a flexible work-from-home
+        environment.
+      </p>
+      <div class="button-group">
+        <a href="#contact" class="contact-btn">Contact Me</a>
+        <a href="assets/acbresume-upd.pdf" class="cv-btn" target="_blank">See CV</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/acbpic-upd.png" alt="Aljohn Baguis" />
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-text">
-            <h1>Hi, my name is Aljohn Baguis</h1>
-            <p style="text-align: justify;">
-                I am a fresh graduate from the University of Makati with a Bachelor of Science degree in Computer Science, majoring in Social Computing. I have a strong passion for UI/UX design and enjoy crafting intuitive, user-friendly digital experiences. In addition to my design interests, I am also skilled in IT support and data encoding. I am currently seeking remote work opportunities where I can apply my skills, continue learning, and grow professionally in a flexible work-from-home environment.
-            </p>
-            <a href="#contact" class="contact-btn">Contact Me</a>
-            <a href="assets/acbresume-upd.pdf" class="cv-btn" target="_blank">See CV</a>
-        </div>
-        <div class="hero-image">
-            <img src="assets/acbpic.png" alt="Aljohn Baguis">
-        </div>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <a href="project1.html" class="project-card">
+        <img src="assets/project1.png" alt="Project 1" />
+        <h3>Cease the Ships</h3>
+        <p>A UI design concept for a mobile board game application.</p>
+      </a>
+      <a href="project2.html" class="project-card">
+        <img src="assets/project2.png" alt="Project 2" />
+        <h3>2D Interactable Environment</h3>
+        <p>A simple design for a mini 2D Christmas-themed laptop game.</p>
+      </a>
+      <a href="project3.html" class="project-card">
+        <img src="assets/project3.png" alt="Project 3" />
+        <h3>Lost World</h3>
+        <p>A UI design for a 3D PC game project.</p>
+      </a>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="assets/project1.png" alt="Project 1">
-                <h3>Cease the Ships</h3>
-                <p>A UI design concept for a mobile board game application.</p>
-                <button class="see-more-btn" data-project="project1.html">See More</button>
-            </div>
-            <div class="project-card">
-                <img src="assets/project2.png" alt="Project 2">
-                <h3>2D Interactable Environment</h3>
-                <p>A simple design for a mini 2D Christmas-themed laptop game.</p>
-                <button class="see-more-btn" data-project="project2.html">See More</button>
-            </div>
-            <div class="project-card">
-                <img src="assets/project3.png" alt="Project 3">
-                <h3>Lost World</h3>
-                <p>A UI design for a 3D PC game project.</p>
-                <button class="see-more-btn" data-project="project3.html">See More</button>
-            </div>
-        </div>
-    </section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>
+      <i class="fas fa-envelope"></i> Email:
+      <a href="mailto:aljohnbaguis456@gmail.com">aljohnbaguis456@gmail.com</a>
+    </p>
+    <p>
+      <i class="fas fa-phone"></i> Phone: +63 915 174 4849
+    </p>
+    <p>
+      <i class="fab fa-linkedin"></i> LinkedIn:
+      <a
+        href="https://www.linkedin.com/in/aljohn-baguis-361485257/"
+        target="_blank"
+        >Aljohn Baguis</a
+      >
+    </p>
+    <p>
+      <i class="fab fa-facebook"></i> Facebook:
+      <a href="https://web.facebook.com/aljohn.baguisii" target="_blank"
+        >Aljohn Baguis</a
+      >
+    </p>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p><i class="fas fa-envelope"></i> Email: aljohnbaguis456@gmail.com</p>
-        <p><i class="fas fa-phone"></i> Phone: +63 915 174 4849</p>
-        <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/aljohn-baguis-361485257/" target="_blank">Aljohn Baguis</a></p>
-        <p><i class="fab fa-facebook"></i> Facebook: <a href="https://web.facebook.com/aljohn.baguisii" target="_blank">Aljohn Baguis</a></p>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Aljohn Baguis | All Rights Reserved.</p>
+  </footer>
 
-    <!-- CSS for white link color -->
-    <style>
-        #contact a {
-            color: white;  /* Sets the color of links to white */
-            text-decoration: none;  /* Removes underline from links */
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const seeMoreButtons = document.querySelectorAll(".see-more-btn");
 
-        #contact a:hover {
-            text-decoration: underline;  /* Optional: Adds underline on hover */
-        }
-    </style>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Aljohn Baguis | All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const seeMoreButtons = document.querySelectorAll(".see-more-btn");
-    
-            seeMoreButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    // Get the project ID from the button's data attribute
-                    const projectPage = this.getAttribute("data-project");
-    
-                    // Redirect to the specific project page
-                    window.location.href = projectPage;
-                });
-            });
+      seeMoreButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const projectPage = this.getAttribute("data-project");
+          window.location.href = projectPage;
         });
-    </script>
-
+      });
+    });
+  </script>
 </body>
 </html>
