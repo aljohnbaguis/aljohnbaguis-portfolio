@@ -269,7 +269,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="aboutMe.html">About Me</a></li>
         <li><a href="#contact">Contact Me</a></li>
       </ul>
@@ -292,37 +292,164 @@
       </p>
       <div class="button-group">
         <a href="#contact" class="contact-btn">Contact Me</a>
-        <a href="assets/acbresume-upd.pdf" class="cv-btn" target="_blank">See CV</a>
+        <a href="assets/aljohnbaguis-resume.pdf" class="cv-btn" target="_blank">See CV</a>
       </div>
     </div>
     <div class="hero-image">
-      <img src="assets/acbpic-upd.png" alt="Aljohn Baguis" />
+      <img src="assets/acbpic2.png" alt="Aljohn Baguis" />
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects-container">
-      <a href="project1.html" class="project-card">
-        <img src="assets/project1.png" alt="Project 1" />
-        <h3>Cease the Ships</h3>
-        <p>A UI design concept for a mobile board game application.</p>
-      </a>
-      <a href="project2.html" class="project-card">
-        <img src="assets/project2.png" alt="Project 2" />
-        <h3>2D Interactable Environment</h3>
-        <p>A simple design for a mini 2D Christmas-themed laptop game.</p>
-      </a>
-      <a href="project3.html" class="project-card">
-        <img src="assets/project3.png" alt="Project 3" />
-        <h3>Lost World</h3>
-        <p>A UI design for a 3D PC game project.</p>
-      </a>
-    </div>
-  </section>
+<!-- Projects Section -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <a href="project1.html" class="project-card">
+      <img src="assets/project1.png" alt="Project 1" />
+      <h3>Cease the Ships</h3>
+      <p>A UI design concept for a mobile board game application.</p>
+    </a>
+    <a href="project2.html" class="project-card">
+      <img src="assets/project2.png" alt="Project 2" />
+      <h3>2D Interactable Environment</h3>
+      <p>A simple design for a mini 2D Christmas-themed laptop game.</p>
+    </a>
+    <a href="project3.html" class="project-card">
+      <img src="assets/project3.png" alt="Project 3" />
+      <h3>Lost World</h3>
+      <p>A UI design for a 3D PC game project.</p>
+    </a>
+  </div>
 
-  <!-- Contact Section -->
+  <!-- Side Scroll Photo Gallery -->
+  <h3 style="margin-top:40px;">Internship Projects</h3>
+  <div class="gallery-container">
+    <img src="assets/img-proj1.jpg" alt="Gallery 1" class="gallery-img" />
+    <img src="assets/img-proj2.jpg" alt="Gallery 2" class="gallery-img" />
+    <img src="assets/img-proj3.jpg" alt="Gallery 3" class="gallery-img" />
+    <img src="assets/img-proj4.jpg" alt="Gallery 4" class="gallery-img" />
+    <img src="assets/img-proj5.jpg" alt="Gallery 5" class="gallery-img" />
+    <img src="assets/img-proj6.png" alt="Gallery 6" class="gallery-img" />
+    <img src="assets/img-proj7.jpg" alt="Gallery 7" class="gallery-img" />
+    <img src="assets/img-proj8.jpg" alt="Gallery 8" class="gallery-img" />
+    <img src="assets/img-proj9.jpg" alt="Gallery 9" class="gallery-img" />
+    <img src="assets/img-proj10.jpg" alt="Gallery 10" class="gallery-img" />
+    <img src="assets/img-proj11.jpg" alt="Gallery 11" class="gallery-img" />
+    <img src="assets/img-proj12.jpg" alt="Gallery 12" class="gallery-img" />
+    <img src="assets/img-proj13.jpg" alt="Gallery 13" class="gallery-img" />
+    <img src="assets/img-proj14.jpg" alt="Gallery 14" class="gallery-img" />
+  </div>
+</section>
+
+<!-- Modal for Enlarged Image -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+  <div id="caption"></div>
+</div>
+
+<style>
+  /* Gallery Styles */
+  .gallery-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #111;
+  }
+
+  .gallery-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .gallery-container::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+  }
+
+  .gallery-img {
+    height: 180px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+  }
+
+  #caption {
+    margin: 15px auto;
+    text-align: center;
+    color: #ccc;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: gray;
+  }
+</style>
+
+<script>
+  // Modal functionality
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".gallery-img").forEach((img) => {
+    img.addEventListener("click", function () {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (e) {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+<!--
+  Contact Section
   <section id="contact">
     <h2>Contact Me</h2>
     <p>
@@ -347,6 +474,7 @@
       >
     </p>
   </section>
+  -->
 
   <!-- Footer -->
   <footer>
